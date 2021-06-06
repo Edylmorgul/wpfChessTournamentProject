@@ -1,0 +1,22 @@
+﻿<Window x:Class="GestionEchec.ModifierJoueur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEchec"
+        mc:Ignorable="d"
+        Title="ModifierJoueur" Height="450" Width="800">
+    <Grid x:Name="modifGrid" MouseEnter="modifGrid_MouseEnter" MouseLeave="modifGrid_MouseLeave">
+        <Label Content="Defaite" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,201,0,0" Width="58"/>
+        <Label Content="Victoire" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,141,0,0" Width="60"/>
+        <Label Content="Prenom" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,88,0,0" Width="60"/>
+        <Label Content="Nom" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,35,0,0" Width="58"/>
+        <TextBox x:Name="txtDefaite" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="361,204,0,0" Text="{Binding nbrDefaite}" KeyDown="TxtDefaite_KeyDown"/>
+        <TextBox x:Name="txtVictoire" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="361,144,0,0" Text="{Binding nbrVictoire}" KeyDown="TxtVictoire_KeyDown"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="361,91,0,0" Text="{Binding prenomJoueur}"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="361,35,0,0" Text="{Binding nomJoueur}"/>
+        <Button x:Name="btnExit" Content="Quitter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="536,346,0,0" Height="34" Click="BtnExit_Click"/>
+        <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Margin="167,346,0,0" VerticalAlignment="Top" Width="92" Height="34" Click="BtnRetour_Click"/>
+        <Button x:Name="btnValiderModif" Content="Valider" HorizontalAlignment="Left" Margin="361,266,0,0" VerticalAlignment="Top" Width="92" Height="33" Click="BtnValiderModif_Click"/>
+    </Grid>
+</Window>

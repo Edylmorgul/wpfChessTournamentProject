@@ -1,0 +1,53 @@
+﻿<Window x:Class="GestionEchec.InfosJoueur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionEchec"
+        mc:Ignorable="d"
+        Title="InfosJoueur" Height="450" Width="800">
+    <Grid>
+        <ListView Height="352" HorizontalAlignment="Left" Margin="195,0,0,0" Name="registreJoueur" VerticalAlignment="Top" Width="427">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Joueur"  Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" {0} - {1}">
+                                            <Binding Path="nomJoueur"/>
+                                            <Binding Path="prenomJoueur"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Modifier" Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="    Modifier    " Click="EditPlayer_Click" CommandParameter="{Binding}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Supprimer" Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="  Supprimer  " Click="DeletePlayer_Click" CommandParameter="{Binding}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Détail" Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="      Afficher      " Click="DetailPlayer_Click" CommandParameter="{Binding}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btnExit" Content="Quitter" HorizontalAlignment="Left" Margin="367,367,0,0" VerticalAlignment="Top" Width="106" Height="34" Click="BtnExit_Click"/>
+    </Grid>
+</Window>
